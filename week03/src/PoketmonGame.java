@@ -12,7 +12,9 @@ public class PoketmonGame {
         charizead.name = "리자몽";
 
         System.out.println(charizead.name + "의 체력은 " + charizead.hp + "이고 레벨은 " + charizead.level + "입니다.");
-        charizead.evolve(charizead.level);
-        pikachu.evolve(pikachu.level);
+        charizead.evolve(charizead);
+        pikachu.evolve(pikachu);
+        pikachu.evolve(pikachu);
     }
+
 }

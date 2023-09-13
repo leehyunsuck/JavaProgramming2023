@@ -1,5 +1,4 @@
 
-
 public class Poketmon {
     protected int level;
     protected int hp;
@@ -33,12 +32,18 @@ public class Poketmon {
         System.out.println(this.name + " 이(가) 기본 공격 시전");
     }
     public void evolve(){
+        if (this instanceof Pikachu){
+            System.out.println("삐까삐까!");
+        } else if(this instanceof Squirtle){
+            System.out.println("꼬북꼬북!");
+        }
+
         this.level += 1;
         this.hp += 100;
         String texts = """
                     ===============
                      name의 레벨이
-                     level으로 증가!
+                     level(LV) 으로 증가!
                     ===============
                     """
                 .replace("level", this.level+"")

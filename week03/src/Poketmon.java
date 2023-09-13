@@ -35,8 +35,10 @@ public class Poketmon {
         return level;
     }
 
-    public void setLevel(int level) {
+    public Poketmon setLevel(int level) {
+        //return type [void] -> [Poketmon]
         this.level = level;
+        return this;
     }
 
     public int getHp() {

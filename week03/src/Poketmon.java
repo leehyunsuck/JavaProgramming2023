@@ -1,3 +1,4 @@
+
 public class Poketmon {
     // fields, 멤버 변수, 속성
     // 캡슐화
@@ -10,6 +11,7 @@ public class Poketmon {
         this.hp = 100;
     }
 
+    //생성자 오버로딩
     Poketmon(String name){
         this(name, 1);
         System.out.println("포켓몬 객체 생성!(매개 변수 1개 생성자)");
@@ -36,7 +38,6 @@ public class Poketmon {
     }
 
     public Poketmon setLevel(int level) {
-        //return type [void] -> [Poketmon]
         this.level = level;
         return this;
     }
@@ -53,4 +54,13 @@ public class Poketmon {
         poketmon.level += 1;
         System.out.println(poketmon.name + "의 레벨이 " + poketmon.level + "으로 증가!");
     }
+    
+    void attack(){
+        System.out.println(this.name + " 이(가) 광역 도발 공격을 시전");
+    }
+
+    void attack(Poketmon poketmon){
+        System.out.println(this.name + " 이(가) " + poketmon.name + "에게 기본공격 시전");
+    }
+
 }

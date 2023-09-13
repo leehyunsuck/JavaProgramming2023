@@ -1,3 +1,4 @@
+
 public class PoketmonGame {
     public static void main(String[] args) {
         Poketmon pikachu = new Poketmon("피카츄");
@@ -29,7 +30,8 @@ public class PoketmonGame {
         System.out.println(charizead.getName() + "의 체력은 " + charizead.getHp() + "이고 레벨은 " + charizead.getLevel() + "입니다.");
         System.out.println(squirtle.getName() + "의 체력은 " + squirtle.getHp() + "이고 레벨은 " + squirtle.getLevel() + "입니다.");
         System.out.println();
+
+        charizead.attack(pikachu);
+        squirtle.attack();
     }
-
 }
-

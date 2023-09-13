@@ -62,7 +62,14 @@ public class Poketmon {
 
     void evolve(Poketmon poketmon){
         poketmon.level += 1;
-        System.out.println(poketmon.name + "의 레벨이 " + poketmon.level + "으로 증가!");
+        //System.out.println(poketmon.name + "의 레벨이 " + poketmon.level + "으로 증가!");
+        String texts = """
+                    name의 레벨이
+                    level으로 증가!
+                """
+                .replace("level", poketmon.level+"")
+                .replace("name", poketmon.name);
+        System.out.println(texts);
     }
     
     void attack(){

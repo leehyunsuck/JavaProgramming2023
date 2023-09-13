@@ -1,4 +1,5 @@
 
+
 public class PokemonGame {
     public static void main(String[] args) {
 //        Poketmon p0 = new Poketmon();
@@ -20,13 +21,9 @@ public class PokemonGame {
         JetBack jetBack = new JetBack();
         p1.setFlyable(jetBack);
         p1.performFly();
-//        p1.evolve();
-//        s1.evolve();
-//        c1.evolve();
-//
-//        p1.attack();
-//        s1.attack();
-//        c1.attack();
+        s1.setFlyable(new Balloon());
+
+        s1.performFly();
 
 
 

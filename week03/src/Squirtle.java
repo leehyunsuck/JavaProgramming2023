@@ -1,4 +1,5 @@
 
+
 public class Squirtle extends Pokemon {
     public Squirtle() {
         System.out.println("자식 클래스(꼬부기)의 기본 생성자");

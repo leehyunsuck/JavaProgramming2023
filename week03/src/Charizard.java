@@ -1,5 +1,5 @@
 
-public class Charizard extends Poketmon {
+public class Charizard extends Pokemon {
     public Charizard() {
         System.out.println("자식 클래스(리자몽)의 기본 생성자");
         this.level = 36;
@@ -14,6 +14,9 @@ public class Charizard extends Poketmon {
 
     @Override
     public void attack(){
-        System.out.println(this.name + " 이(가) 불꽃 공격 시전!");
+        System.out.println(this.name + " 이(가) 플레어드라이브 공격 시전!");
+    }
+    public void type(){
+        System.out.println(this.name + " 은(는) 화염 속성!");
     }
 }

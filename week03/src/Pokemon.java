@@ -1,18 +1,31 @@
 
-public class Poketmon {
+
+public abstract class Pokemon {
     protected int level;
     protected int hp;
     protected String name;
 
     private static int pokemonCount = 0;
 
+    Flyable flyable; //연관 관계
 
-    public Poketmon() {
+    public void setFlyable(Flyable flyable){
+        this.flyable = flyable;
+    }
+
+    public void performFly(){
+        System.out.print(this.name + "이(가) ");
+        this.flyable.fly();
+    }
+
+
+
+    public Pokemon() {
         System.out.println("부모 클래스의 기본 생성자");
         pokemonCount++;
     }
 
-    public Poketmon(int level, int hp, String name) {
+    public Pokemon(int level, int hp, String name) {
         System.out.println("부모 클래스의 매개변수 생성자 (생성자 오버로딩)");
         this.level = level;
         this.hp = hp;
@@ -28,14 +41,14 @@ public class Poketmon {
     public int getHp() { return hp; }
     public void setHp(int hp) { this.hp = hp; }
 
-    public void attack(){
-        System.out.println(this.name + " 이(가) 기본 공격 시전");
-    }
+    public abstract void attack();
     public void evolve(){
         if (this instanceof Pikachu){
             System.out.println("삐까삐까!");
         } else if(this instanceof Squirtle){
             System.out.println("꼬북꼬북!");
+        } else if(this instanceof  Charizard){
+            System.out.println("리이~자몽!");
         }
 
         this.level += 1;

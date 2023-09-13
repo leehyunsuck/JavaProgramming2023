@@ -7,18 +7,19 @@ public class Poketmon {
 
     Poketmon(){
         System.out.println("포켓몬 객체 생성!");
-    }
-
-    Poketmon(String name, int level, int hp) {
-        System.out.println("포켓몬 객체 생성!(매개 변수 3개 생성자)");
-        this.name = name;
-        this.level = level;
-        this.hp = hp;
+        this.hp = 100;
     }
 
     Poketmon(String name){
+        this(name, 1);
         System.out.println("포켓몬 객체 생성!(매개 변수 1개 생성자)");
+    }
+
+    Poketmon(String name, int level) {
+        System.out.println("포켓몬 객체 생성!(매개 변수 2개 생성자)");
         this.name = name;
+        this.level = level;
+        this.hp = 100;
     }
 
     // alt+instert

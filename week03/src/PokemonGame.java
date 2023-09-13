@@ -12,7 +12,13 @@ public class PokemonGame {
 
         s1.setFlyable(new NoFly());
         p1.setFlyable(new NoFly());
-        c1.setFlyable(new Wings());
+        //c1.setFlyable(new Wings());
+        c1.setFlyable(new Wings(){
+            @Override
+            public void fly() {
+                System.out.println("강철 날개로 날아갑니다!");
+            }
+        });
 
         p1.performFly();
         c1.performFly();

@@ -1,4 +1,5 @@
 
+
 public abstract class Pokemon {
     protected int level;
     protected int hp;

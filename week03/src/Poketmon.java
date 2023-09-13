@@ -1,30 +1,40 @@
-
 public class Poketmon {
     // fields, 멤버 변수, 속성
     // 캡슐화
     private String name;
     private int level;
     private int hp;
+    //static member variable
+    private static int poketmonCount = 0;
 
     Poketmon(){
         System.out.println("포켓몬 객체 생성!");
         this.hp = 100;
+        poketmonCount++;
     }
-
     //생성자 오버로딩
     Poketmon(String name){
-        this(name, 1);
         System.out.println("포켓몬 객체 생성!(매개 변수 1개 생성자)");
+        //this(name, 1);
+        this.name = name;
+        this.level = 1;
+        this.hp = 100;
+        poketmonCount++;
     }
-
     Poketmon(String name, int level) {
         System.out.println("포켓몬 객체 생성!(매개 변수 2개 생성자)");
         this.name = name;
         this.level = level;
         this.hp = 100;
+        poketmonCount++;
     }
 
     // alt+instert
+
+    public static int getPoketmonCount() {
+        return poketmonCount;
+    }
+
     public String getName() {
         return name;
     }

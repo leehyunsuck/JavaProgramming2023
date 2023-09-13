@@ -1,9 +1,13 @@
-
 public class PoketmonGame {
     public static void main(String[] args) {
+
+        System.out.println(Poketmon.getPoketmonCount());
+
         Poketmon pikachu = new Poketmon("피카츄");
         Poketmon charizead = new Poketmon();
         Poketmon squirtle = new Poketmon("꼬부기", 1);
+
+        System.out.println(Poketmon.getPoketmonCount());
 
         charizead.setName("리자몽");
         charizead.setLevel(36);

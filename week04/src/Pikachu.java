@@ -5,6 +5,7 @@ public class Pikachu extends Pokemon {
         this.level = 1;
         this.hp = 35;
         this.name = "피카츄";
+        this.flyable = new NoFly();
     }
     public void type(){
         System.out.println(this.name + " 은(는) 전기 속성!");

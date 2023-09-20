@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class PokemonGame {
     public static void main(String[] args) {
@@ -19,5 +20,36 @@ public class PokemonGame {
             System.out.println("!Error!");
         }
 
+        //아군 포켓몬 선택
+        Scanner input = new Scanner(System.in);
+        System.out.println("포켓몬을 선택하세요 \n[1]피카츄   [2]꼬부기   [3]리자몽 ");
+        int pokemonPick = input.nextInt();
+        if (pokemonPick == 1) {
+            NoFly noFly = new NoFly();
+            Pikachu p1 = new Pikachu(noFly);
+        } else if (pokemonPick == 2) {
+            NoFly noFly = new NoFly();
+            Squirtle p2 = new Squirtle(noFly);
+        } else if (pokemonPick == 3) {
+            Wings wings = new Wings();
+            Charizard p3 = new Charizard(wings);
+        } else {
+            System.out.println("정상적인 선택이 아닙니다");
+        }
+
+        int menu;
+        while (true) {
+            System.out.print("\t[1]전투   [2]도망   [3]종료 : s");
+            menu = input.nextInt();
+
+            if (menu == 1) {
+
+            } else if (menu == 2) {
+
+            } else {
+                System.out.println("게임 종료");
+                break;
+            }
+        }
     }
 }

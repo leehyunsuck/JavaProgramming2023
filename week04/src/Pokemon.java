@@ -40,6 +40,12 @@ public abstract class Pokemon {
     public void setHp(int hp) { this.hp = hp; }
 
     public abstract void attack();
+
+    public void attack(Pokemon target) {
+        System.out.println(this.name + "이(가) " + target.name + "에게 공격 시전!");
+        //target.hp = target.hp - this.공격력
+    }
+
     public void evolve(){
         if (this instanceof Pikachu){
             System.out.println("삐까삐까!");

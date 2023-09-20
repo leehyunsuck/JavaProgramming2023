@@ -2,8 +2,8 @@
 
 public class PokemonGame {
     public static void main(String[] args) {
-        Pikachu pikachu = new Pikachu();
-//        pikachu.setFlyable(new NoFly());
+        NoFly noFly = new NoFly();
+        Pikachu pikachu = new Pikachu(noFly);
         pikachu.performFly();
     }
 }

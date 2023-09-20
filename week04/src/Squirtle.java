@@ -1,11 +1,12 @@
 
 
 public class Squirtle extends Pokemon {
-    public Squirtle() {
+    public Squirtle(Flyable f) {
         System.out.println("자식 클래스(꼬부기)의 기본 생성자");
         this.level = 1;
         this.hp = 44;
         this.name = "꼬부기";
+        this.flyable = f;
     }
 
     public void type(){

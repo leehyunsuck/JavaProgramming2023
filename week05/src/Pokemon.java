@@ -6,6 +6,8 @@ public abstract class Pokemon {
     protected String name;
     protected int attackRate;
     protected int defenseRate;
+    protected String[] skills;
+    protected int[] specialAttackRate;
 
     private static int pokemonCount = 0;
 

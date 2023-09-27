@@ -39,14 +39,20 @@ public class PokemonGame {
             System.out.println("정상적인 선택이 아닙니다");
         }
 
-        int menu;
+        int menu, skillMenu;
         while (true) {
             System.out.print("\t[1]전투   [2]도망   [3]종료 : ");
             menu = input.nextInt();
 
             if (menu == 1) {
-                System.out.print("전투 기술 :");
-                player.attack(enemy, input.next());
+                System.out.print("전투기술 :" +
+                        "   1] " + player.skills[0] +
+                        "   2] " + player.skills[1] +
+                        "   3] " + player.skills[2] +
+                        " : ");
+
+                skillMenu = input.nextInt();
+                player.attack(enemy, player.skills[skillMenu-1]);
             } else if (menu == 2) {
                 
             } else {

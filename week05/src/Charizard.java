@@ -4,11 +4,13 @@ public class Charizard extends Pokemon {
     public Charizard(Flyable f) {
         System.out.println("리이~자몽!");
         this.level = 36;
-        this.attackRate = 94;
+        this.attackRate = (int)(Math.random() * 11) + 74;
         this.defenseRate = 78;
         this.hp = 78;
         this.name = "리자몽";
         this.flyable = f;
+        this.skills = new String[]{"화염방사", "용의숨결", "할퀴기"};
+        this.specialAttackRate = new int[]{90, 60, 40};
     }
 
     public Charizard(int level, int hp, String name) {

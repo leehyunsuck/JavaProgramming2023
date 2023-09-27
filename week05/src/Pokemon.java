@@ -5,6 +5,7 @@ public abstract class Pokemon {
     protected int hp;
     protected String name;
     protected int attackRate;
+    protected int defenseRate;
 
     private static int pokemonCount = 0;
 
@@ -80,7 +81,11 @@ public abstract class Pokemon {
 
     public void attack(Pokemon target, String skill) {
         System.out.println(this.name + "이(가) " + target.name + "에게 " + skill + " 공격 시전!");
-        target.hp = target.hp - this.attackRate;
-        System.out.println(target.name + "의 체력은 "+ target.hp + "입니다");
+        target.hp = target.hp - this.attackRate + target.defenseRate;
+        if (target.hp <= 0) {
+            System.out.println(target.name + "은(는) 사망!");
+        } else {
+            System.out.println(target.name + "의 체력은 "+ target.hp + "입니다");
+        }
     }
 }

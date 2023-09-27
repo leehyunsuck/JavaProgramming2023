@@ -4,6 +4,7 @@ public class Pikachu extends Pokemon {
         System.out.println("피카츄~!");
         this.level = 1;
         this.attackRate = 55;
+        this.defenseRate = 40;
         this.hp = 35;
         this.name = "피카츄";
         this.flyable = f;

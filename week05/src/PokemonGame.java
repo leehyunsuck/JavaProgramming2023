@@ -24,7 +24,11 @@ public class PokemonGame {
         //아군 포켓몬 선택
         Pokemon player = null;
         Scanner input = new Scanner(System.in);
-        System.out.print("포켓몬을 선택하세요 \n[1]피카츄   [2]꼬부기   [3]리자몽 ");
+        System.out.print("포켓몬 선택 : " +
+                "   1] 피카츄" +
+                "   2] 꼬부기" +
+                "   3] 리자몽" +
+                " : ");
         int pokemonPick = input.nextInt();
         if (pokemonPick == 1) {
             NoFly noFly = new NoFly();
@@ -52,7 +56,7 @@ public class PokemonGame {
                         " : ");
 
                 skillMenu = input.nextInt();
-                player.attack(enemy, player.skills[skillMenu-1]);
+                player.attack(enemy, skillMenu-1);
             } else if (menu == 2) {
                 
             } else {

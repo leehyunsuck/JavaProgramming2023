@@ -81,10 +81,11 @@ public abstract class Pokemon {
 
     public abstract void attack();
 
-    public void attack(Pokemon target, String skill) {
-        System.out.println(this.name + "이(가) " + target.name + "에게 " + skill + " 공격 시전!");
+    public void attack(Pokemon target, int num) {
+        System.out.println(this.name + "이(가) " + target.name + "에게 " + this.skills[num] + " 공격 시전!");
 
-        int tempAttackRate = this.attackRate - target.defenseRate < 0 ? 0 : this.attackRate - target.defenseRate;
+        int tempAttackRate = this.attackRate + this.specialAttackRate[num] - target.defenseRate < 0 ?
+                0 : this.attackRate + this.specialAttackRate[num] - target.defenseRate;
 
         target.hp -= tempAttackRate;
 

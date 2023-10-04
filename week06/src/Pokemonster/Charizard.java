@@ -1,5 +1,7 @@
 package Pokemonster;
 
+import java.util.ArrayList;
+
 public class Charizard extends Pokemon {
     public Charizard(Flyable f) {
         System.out.println("리이~자몽!");
@@ -9,8 +11,14 @@ public class Charizard extends Pokemon {
         this.hp = 78;
         this.name = "리자몽";
         this.flyable = f;
-        this.skills = new String[]{"화염방사", "용의숨결", "할퀴기"};
-        this.specialAttackRate = new int[]{90, 60, 40};
+//        this.skills = new String[]{"화염방사", "용의숨결", "할퀴기"};
+        this.skills.add("화염방사");
+        this.skills.add("용의숨결");
+        this.skills.add("할퀴기");
+//        this.specialAttackRate = new int[]{90, 60, 40};
+        this.specialAttackRate.add(90);
+        this.specialAttackRate.add(60);
+        this.specialAttackRate.add(40);
     }
 
     public Charizard(int level, int hp, String name) {

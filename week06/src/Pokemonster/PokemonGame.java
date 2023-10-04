@@ -51,11 +51,17 @@ public class PokemonGame {
             menu = input.nextInt();
 
             if (menu == 1) {
-                System.out.print("전투기술 :" +
-                        "   1] " + player.skills[0] +
-                        "   2] " + player.skills[1] +
-                        "   3] " + player.skills[2] +
-                        " : ");
+//                System.out.print("전투기술 :" +
+//                        "   1] " + player.skills[0] +
+//                        "   2] " + player.skills[1] +
+//                        "   3] " + player.skills[2] +
+//                        " : ");
+                System.out.print("전투기술 : ");
+                int i = 1;
+                for (String skill : player.skills) {
+                    System.out.print(i + ") " + skill + " ");
+                    i++;
+                }
 
                 skillMenu = input.nextInt();
                 player.attack(enemy, skillMenu-1);

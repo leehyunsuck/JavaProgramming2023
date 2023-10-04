@@ -1,13 +1,18 @@
 package Pokemonster;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Pokemon {
     protected int level;
     protected int hp;
     protected String name;
     protected int attackRate;
     protected int defenseRate;
-    protected String[] skills;
-    protected int[] specialAttackRate;
+//    protected String[] skills;
+//    protected int[] specialAttackRate;
+    protected List<String> skills;
+    protected List<Integer> specialAttackRate;
 
     private static int pokemonCount = 0;
 
@@ -22,10 +27,10 @@ public abstract class Pokemon {
         this.flyable.fly();
     }
 
-
-
     public Pokemon() {
         pokemonCount++;
+        this.skills = new ArrayList<>();
+        this.specialAttackRate = new ArrayList<>();
     }
 
     public Pokemon(int level, int hp, String name) {
@@ -82,10 +87,13 @@ public abstract class Pokemon {
     public abstract void attack();
 
     public void attack(Pokemon target, int num) {
-        System.out.println(this.name + "이(가) " + target.name + "에게 " + this.skills[num] + " 공격 시전!");
+        System.out.println(this.name + "이(가) " + target.name + "에게 " + this.skills.get(num) + " 공격 시전!");
 
-        int tempAttackRate = this.attackRate + this.specialAttackRate[num] - target.defenseRate < 0 ?
-                0 : this.attackRate + this.specialAttackRate[num] - target.defenseRate;
+//        int tempAttackRate = this.attackRate + this.specialAttackRate[num] - target.defenseRate < 0 ?
+//                0 : this.attackRate + this.specialAttackRate[num] - target.defenseRate;
+
+        int tempAttackRate = this.attackRate + this.specialAttackRate.get(num) - target.defenseRate < 0 ?
+                0 : this.attackRate + this.specialAttackRate.get(num) - target.defenseRate;
 
         target.hp -= tempAttackRate;
 

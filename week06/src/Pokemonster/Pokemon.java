@@ -1,4 +1,4 @@
-
+package Pokemonster;
 
 public abstract class Pokemon {
     protected int level;

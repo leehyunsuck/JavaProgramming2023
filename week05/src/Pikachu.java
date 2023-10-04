@@ -8,7 +8,8 @@ public class Pikachu extends Pokemon {
         this.hp = 35;
         this.name = "피카츄";
         this.flyable = f;
-//        this.flyable = new NoFly();
+        this.skills = new String[]{"10만볼트", "전기쇼크", "볼부비부비"};
+        this.specialAttackRate = new int[]{90, 40, 20};
     }
     public void type(){
         System.out.println(this.name + " 은(는) 전기 속성!");

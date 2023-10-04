@@ -1,3 +1,5 @@
+package Pokemonster;
+
 import java.util.Scanner;
 
 public class PokemonGame {

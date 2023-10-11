@@ -73,6 +73,12 @@ public class PokemonGame {
             }
         } catch (InputMismatchException err) {
             System.out.println("입력값은 숫자 만 가능합니다");
+            System.out.println("세부 내용 : " + err.getMessage());
+        } catch (Exception err) {
+            System.out.println("Exception 발생");
+            System.out.println("세부 내용 : " + err.getMessage());
+        } finally {
+            System.out.println("프로그램 종료");
         }
 
     }

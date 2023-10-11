@@ -1,6 +1,7 @@
 package Pokemonster;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Squirtle extends Pokemon {
     public Squirtle(Flyable f) {
@@ -11,14 +12,8 @@ public class Squirtle extends Pokemon {
         this.hp = 44;
         this.name = "꼬부기";
         this.flyable = f;
-        this.skills = new ArrayList<>();
-        this.skills.add("하이드로펌프");
-        this.skills.add("물의 파동");
-        this.skills.add("물대포");
-        this.specialAttackRate = new ArrayList<>();
-        this.specialAttackRate.add(110);
-        this.specialAttackRate.add(60);
-        this.specialAttackRate.add(40);
+        this.skills = new ArrayList<>(Arrays.asList("하이드로펌프", "물의 파동", "물대포"));
+        this.specialAttackRate = new ArrayList<>(Arrays.asList(110, 60, 40));
     }
 
     public void type(){

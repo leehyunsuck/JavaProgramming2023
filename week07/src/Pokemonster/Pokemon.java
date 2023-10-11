@@ -29,8 +29,6 @@ public abstract class Pokemon {
 
     public Pokemon() {
         pokemonCount++;
-        this.skills = new ArrayList<>();
-        this.specialAttackRate = new ArrayList<>();
     }
 
     public Pokemon(int level, int hp, String name) {

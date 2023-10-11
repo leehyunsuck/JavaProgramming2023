@@ -4,11 +4,11 @@ import java.util.Scanner;
 
 public class PokemonGame {
     public static void main(String[] args) {
-        System.out.println("포켓몬 게임을 시작합니다\n" +
-                "야생 포캣몬이 나타났습니다");
+        System.out.println("포켓몬 게임을 시작합니다\n야생 포캣몬이 나타났습니다");
 
         //적 포켓몬 랜덤 생성
         Pokemon enemy = null;
+
         int enemyPick = (int)(Math.random()*3);
         if (enemyPick == 0) {
             NoFly noFly = new NoFly();
@@ -51,11 +51,6 @@ public class PokemonGame {
             menu = input.nextInt();
 
             if (menu == 1) {
-//                System.out.print("전투기술 :" +
-//                        "   1] " + player.skills[0] +
-//                        "   2] " + player.skills[1] +
-//                        "   3] " + player.skills[2] +
-//                        " : ");
                 System.out.print("전투기술 : ");
                 int i = 1;
                 for (String skill : player.skills) {

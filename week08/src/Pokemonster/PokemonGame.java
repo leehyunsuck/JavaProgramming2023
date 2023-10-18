@@ -57,20 +57,22 @@ public class PokemonGame {
                 menu = input.nextInt();
 
                 if (menu == 1) {
-                    System.out.print("전투기술 : ");
-                    int i = 1;
-                    for (String skill : player.skills) {
-                        System.out.print(i + ") " + skill + " ");
-                        i++;
-                    }
+                    while (true) {
+                        System.out.print("전투기술 : ");
 
-                    skillMenu = input.nextInt();
-                    if (skillMenu > player.skills.size()) {
-                        System.out.println("옳바르지 않은 스킬선택 입니다");
-                        continue;
+                        for (int i = 1; i <= player.skills.size(); i++) {
+                            System.out.print(i + ") " + player.skills.get(i-1) + " ");
+                        }
+
+                        skillMenu = input.nextInt();
+                        if (skillMenu <= player.skills.size() && skillMenu != 0) {
+                            player.attack(enemy, skillMenu-1);
+                            enemy.attack(player, (int)(Math.random() * 3));
+                            break;
+                        } else {
+                            System.out.println("옳바르지 않은 스킬선택 입니다");
+                        }
                     }
-                    player.attack(enemy, skillMenu-1);
-                    enemy.attack(player, (int)(Math.random() * 3));
                 } else if (menu == 2) {
 
                 } else if (menu == 3) {

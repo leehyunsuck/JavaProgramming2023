@@ -65,13 +65,19 @@ public class PokemonGame {
                     }
 
                     skillMenu = input.nextInt();
+                    if (skillMenu > player.skills.size()) {
+                        System.out.println("옳바르지 않은 스킬선택 입니다");
+                        continue;
+                    }
                     player.attack(enemy, skillMenu-1);
                     enemy.attack(player, (int)(Math.random() * 3));
                 } else if (menu == 2) {
 
-                } else {
+                } else if (menu == 3) {
                     System.out.println("게임 종료");
                     break;
+                } else {
+                    System.out.println("옳바르지 않은 선택 입니다");
                 }
             }
         } catch (InputMismatchException err) {

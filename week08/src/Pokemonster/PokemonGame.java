@@ -80,6 +80,9 @@ public class PokemonGame {
         } catch (NullPointerException err) {
             System.out.println("플레이어 객체가 생성되지 않았습니다");
             System.out.println("세부 내용 : " + err.getMessage());
+        } catch (IndexOutOfBoundsException err) {
+            System.out.println("존재하지 않는 스킬");
+            System.out.println("세부 내용 : " + err.getMessage());
         } catch (Exception err) {
             System.out.println("Exception 발생");
             System.out.println("세부 내용 : " + err.getMessage());

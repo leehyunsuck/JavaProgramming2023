@@ -23,27 +23,33 @@ public class PokemonGame {
         }
 
         //아군 포켓몬 선택
-        Pokemon player = null;
-        Scanner input = new Scanner(System.in);
-        System.out.print("포켓몬 선택 : " +
-                "   1] 피카츄" +
-                "   2] 꼬부기" +
-                "   3] 리자몽" +
-                " : ");
+
         try {
-            int pokemonPick = input.nextInt();
-            if (pokemonPick == 1) {
-                NoFly noFly = new NoFly();
-                player = new Pikachu(noFly);
-            } else if (pokemonPick == 2) {
-                NoFly noFly = new NoFly();
-                player = new Squirtle(noFly);
-            } else if (pokemonPick == 3) {
-                Wings wings = new Wings();
-                player = new Charizard(wings);
-            } else {
-                System.out.println("정상적인 선택이 아닙니다");
+            Pokemon player = null;
+            Scanner input = new Scanner(System.in);
+            while (true) {
+                System.out.print("포켓몬 선택 : " +
+                        "   1] 피카츄" +
+                        "   2] 꼬부기" +
+                        "   3] 리자몽" +
+                        " : ");
+                int pokemonPick = input.nextInt();
+                if (pokemonPick == 1) {
+                    NoFly noFly = new NoFly();
+                    player = new Pikachu(noFly);
+                } else if (pokemonPick == 2) {
+                    NoFly noFly = new NoFly();
+                    player = new Squirtle(noFly);
+                } else if (pokemonPick == 3) {
+                    Wings wings = new Wings();
+                    player = new Charizard(wings);
+                } else {
+                    System.out.println("정상적인 선택이 아닙니다");
+                    continue;
+                }
+                break;
             }
+
 
             int menu, skillMenu;
             while (true) {
@@ -74,12 +80,10 @@ public class PokemonGame {
         } catch (NullPointerException err) {
             System.out.println("플레이어 객체가 생성되지 않았습니다");
             System.out.println("세부 내용 : " + err.getMessage());
-        }
-//        catch (Exception err) {
-//            System.out.println("Exception 발생");
-//            System.out.println("세부 내용 : " + err.getMessage());
-//        }
-        finally {
+        } catch (Exception err) {
+            System.out.println("Exception 발생");
+            System.out.println("세부 내용 : " + err.getMessage());
+        } finally {
             System.out.println("프로그램 종료");
         }
 

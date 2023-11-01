@@ -64,6 +64,7 @@ public class PokemonGame {
                         }
                     }
                 } else if (menu == 2) {
+                    player.performFly();
                     System.out.println("현재 포켓몬으로부터 도망칩니다!");
                     produceEnemy();
                 } else if (menu == 3) {

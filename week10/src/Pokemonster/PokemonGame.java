@@ -7,26 +7,12 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class PokemonGame {
+    public static Pokemon enemy = null;
+
     public static void main(String[] args) {
-        System.out.println("포켓몬 게임을 시작합니다\n야생 포캣몬이 나타났습니다");
-
-        //적 포켓몬 랜덤 생성
-        Pokemon enemy = null;
-
-        int enemyPick = (int)(Math.random()*3);
-        if (enemyPick == 0) {
-            NoFly noFly = new NoFly();
-            enemy = new Pikachu(noFly);
-        } else if (enemyPick == 1) {
-            NoFly noFly = new NoFly();
-            enemy = new Squirtle(noFly);
-        } else {
-            Wings wings = new Wings();
-            enemy = new Charizard(wings);
-        }
+        System.out.println("포켓몬 게임을 시작합니다");
 
         //아군 포켓몬 선택
-
         try {
             Pokemon player = null;
             Scanner input = new Scanner(System.in);
@@ -53,6 +39,7 @@ public class PokemonGame {
                 break;
             }
 
+            produceEnemy();     //적 생성 메소드 호출
 
             int menu, skillMenu;
             while (true) {
@@ -77,7 +64,8 @@ public class PokemonGame {
                         }
                     }
                 } else if (menu == 2) {
-                    player.attack();
+                    System.out.println("현재 포켓몬으로부터 도망칩니다!");
+                    produceEnemy();
                 } else if (menu == 3) {
                     System.out.println("게임 종료");
                     break;
@@ -100,6 +88,21 @@ public class PokemonGame {
         } finally {
             System.out.println("프로그램 종료");
         }
+    }
 
+    private static void produceEnemy() {
+        //적 포켓몬 랜덤 생성
+        System.out.println("야생 포켓몬이 나타났습니다!");
+        int enemyPick = (int)(Math.random()*3);
+        if (enemyPick == 0) {
+            NoFly noFly = new NoFly();
+            enemy = new Pikachu(noFly);
+        } else if (enemyPick == 1) {
+            NoFly noFly = new NoFly();
+            enemy = new Squirtle(noFly);
+        } else {
+            Wings wings = new Wings();
+            enemy = new Charizard(wings);
+        }
     }
 }

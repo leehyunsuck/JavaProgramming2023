@@ -24,14 +24,12 @@ public class PokemonGame {
                         " : ");
                 int pokemonPick = input.nextInt();
                 if (pokemonPick == 1) {
-                    NoFly noFly = new NoFly();
-                    player = new Pikachu(noFly);
+                    //player = new Pikachu(new NoFly());
+                    player = new Pikachu(() -> System.out.println("로켓 추진기로 날아갑니다"));
                 } else if (pokemonPick == 2) {
-                    NoFly noFly = new NoFly();
-                    player = new Squirtle(noFly);
+                    player = new Squirtle(new NoFly());
                 } else if (pokemonPick == 3) {
-                    Wings wings = new Wings();
-                    player = new Charizard(wings);
+                    player = new Charizard(new Wings());
                 } else {
                     System.out.println("정상적인 선택이 아닙니다");
                     continue;

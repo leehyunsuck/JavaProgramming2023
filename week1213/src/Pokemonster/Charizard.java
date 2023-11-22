@@ -3,6 +3,7 @@ package Pokemonster;
 import fly.Flyable;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class Charizard extends Pokemon {
     public Charizard(Flyable f) {
@@ -14,11 +15,8 @@ public class Charizard extends Pokemon {
         this.name = "리자몽";
         this.flyable = f;
 
-        this.skills = new HashMap<>();
-        this.skills.put(1, "화염방사");
-        this.specialAttackRate = new HashMap<>();
-//        this.skills = new ArrayList<>(Arrays.asList("화염방사", "용의숨결", "할퀴기"));
-//        this.specialAttackRate = new ArrayList<>(Arrays.asList(90, 60, 40));
+        this.skills = new HashMap<>(Map.of(1, "화염방사", 2, "용의숨결", 3, "할퀴기"));
+        this.specialAttackRate = new HashMap<>(Map.of("화염방사", 90, "용의숨결", 60, "할퀴기", 40));
     }
 
     public Charizard(int level, int hp, String name) {

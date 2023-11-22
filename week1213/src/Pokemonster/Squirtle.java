@@ -2,8 +2,8 @@ package Pokemonster;
 
 import fly.Flyable;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Squirtle extends Pokemon {
     public Squirtle(Flyable f) {
@@ -14,8 +14,9 @@ public class Squirtle extends Pokemon {
         this.hp = 44;
         this.name = "꼬부기";
         this.flyable = f;
-        this.skills = new ArrayList<>(Arrays.asList("하이드로펌프", "물의 파동", "물대포"));
-        this.specialAttackRate = new ArrayList<>(Arrays.asList(110, 60, 40));
+
+        this.skills = new HashMap<>(Map.of(1, "하이드로펌프", 2, "물의 파동", 3, "물대포"));
+        this.specialAttackRate = new HashMap<>(Map.of("하이드로펌프", 110, "물의 파동", 60, "물대포", 40));
     }
 
     public void type(){

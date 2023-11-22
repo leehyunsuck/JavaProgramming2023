@@ -4,6 +4,8 @@ import fly.Flyable;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Pikachu extends Pokemon {
     public Pikachu(Flyable f) {
@@ -14,8 +16,9 @@ public class Pikachu extends Pokemon {
         this.hp = 35;
         this.name = "피카츄";
         this.flyable = f;
-        this.skills = new ArrayList<>(Arrays.asList("10만 볼트", "전기쇼크", "볼부비부비"));
-        this.specialAttackRate = new ArrayList<>(Arrays.asList(90, 40, 20));
+
+        this.skills = new HashMap<>(Map.of(1, "10만 볼트", 2,  "전기쇼크", 3, "볼부비부비"));
+        this.specialAttackRate = new HashMap<>(Map.of("10만 볼트", 90, "전기쇼크", 40, "볼부비부비", 20));
     }
     public void type(){
         System.out.println(this.name + " 은(는) 전기 속성!");

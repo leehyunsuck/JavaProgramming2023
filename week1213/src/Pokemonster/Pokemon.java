@@ -10,10 +10,10 @@ public abstract class Pokemon {
     protected String name;
     protected int attackRate;
     protected int defenseRate;
-    //protected Map<String, Integer> skills;
-    protected Map<Map<Integer, String>, Integer> skills;
-//    protected List<String> skills;
-//    protected List<Integer> specialAttackRate;
+
+    protected Map<Integer, String> skills;
+    protected Map<String, Integer> specialAttackRate;
+
 
     private static int pokemonCount = 0;
 
@@ -85,10 +85,10 @@ public abstract class Pokemon {
 
     public abstract void attack();
 
-    public void attack(Pokemon target, String skill) {
-        System.out.println(this.name + "이(가) " + target.name + "에게 " + skill + " 공격 시전!");
+    public void attack(Pokemon target, int num) {
+        System.out.println(this.name + "이(가) " + target.name + "에게 " + this.skills.get(num) + " 공격 시전!");
 
-        int tempAttackRate = Math.max(this.attackRate + this.skills.get(skill) - target.defenseRate, 0);
+        int tempAttackRate = Math.max(this.attackRate + this.specialAttackRate.get(this.skills.get(num)) - target.defenseRate, 0);
 
         target.hp -= tempAttackRate;
 

@@ -2,8 +2,7 @@ package Pokemonster;
 
 import fly.Flyable;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.HashMap;
 
 public class Charizard extends Pokemon {
     public Charizard(Flyable f) {
@@ -14,8 +13,12 @@ public class Charizard extends Pokemon {
         this.hp = 78;
         this.name = "리자몽";
         this.flyable = f;
-        this.skills = new ArrayList<>(Arrays.asList("화염방사", "용의숨결", "할퀴기"));
-        this.specialAttackRate = new ArrayList<>(Arrays.asList(90, 60, 40));
+
+        this.skills = new HashMap<>();
+        this.skills.put(1, "화염방사");
+        this.specialAttackRate = new HashMap<>();
+//        this.skills = new ArrayList<>(Arrays.asList("화염방사", "용의숨결", "할퀴기"));
+//        this.specialAttackRate = new ArrayList<>(Arrays.asList(90, 60, 40));
     }
 
     public Charizard(int level, int hp, String name) {

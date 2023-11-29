@@ -94,6 +94,8 @@ public abstract class Pokemon {
 
         if (target.hp <= 0) {
             System.out.println(target.name + "은(는) 사망!");
+            System.out.print(" 새로운 적 ");
+            PokemonGame.produceEnemy();
         } else {
             System.out.println(target.name + "의 체력은 "+ target.hp + "입니다");
         }

@@ -3,11 +3,12 @@ package Pokemonster;
 import fly.NoFly;
 import fly.Wings;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
+import java.util.*;
+import java.util.ArrayList;
 import java.util.function.*;
 
 public class PokemonGame {
+    public static int i = 0;
     public static Pokemon enemy = null;
     public static void main(String[] args) {
         System.out.println("포켓몬 게임을 시작합니다");
@@ -40,9 +41,17 @@ public class PokemonGame {
                     while (true) {
 
                         System.out.print("전투기술 : ");
-                        for (int i = 1; i <= player.skills.size(); i++) {
-                            System.out.print(i + ") " + player.skills.get(i) + " ");
-                        }
+//                        for (int i = 1; i <= player.skills.size(); i++) {
+//                            System.out.print(i + ") " + player.skills.get(i) + " ");
+//                        }
+
+                        Collection<String> valueSet = player.skills.values();
+                        ArrayList<String> skillsList = new ArrayList<>(valueSet);
+
+                        i = 0;
+                        skillsList.stream().forEach( s -> System.out.print(++i + ") " + s + " "));
+
+                        //Arrays.asList(1, 2, 3).forEach( i -> System.out.print(i + ") " + skillsList.get(i-1) + " "));
 
                         skillMenu = input.nextInt();
                         if (skillMenu <= player.skills.size() && skillMenu != 0) {
@@ -86,7 +95,7 @@ public class PokemonGame {
             System.out.println("프로그램 종료");
         }
     }
-    private static void produceEnemy() {
+    public static void produceEnemy() {
         //적 포켓몬 랜덤 생성
         System.out.println("야생 포켓몬이 나타났습니다!");
         int enemyPick = (int)(Math.random()*3);

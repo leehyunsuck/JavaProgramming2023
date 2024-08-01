@@ -1,2 +1,1 @@
-This repository contains practice code and assignments related to Java classes.
-Welcome All~
+학교 수업
